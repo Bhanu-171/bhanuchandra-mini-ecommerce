@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive mini e-commerce demo with a persistent shopping cart.">
+  <title>ShopEase | Mini Store</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="ShopEase home"><span class="brand-mark">S</span> ShopEase</a>
+    <nav aria-label="Main navigation">
+      <a href="#products">Products</a>
+      <a href="#cart">My Cart <span class="cart-count" id="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">EVERYDAY FINDS, MADE SIMPLE</p>
+        <h1>Good things.<br><span>Great prices.</span></h1>
+        <p class="hero-copy">Explore useful everyday essentials and add your favourites to the cart.</p>
+        <a class="primary-button hero-button" href="#products">Explore products</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-circle"></div>
+        <div class="art-card card-one">🎧</div>
+        <div class="art-card card-two">⌚</div>
+        <div class="art-card card-three">🎒</div>
+        <div class="art-spark">✦</div>
+      </div>
+    </section>
+
+    <section class="section-heading" id="products">
+      <div>
+        <p class="eyebrow">THE COLLECTION</p>
+        <h2>Featured products</h2>
+      </div>
+      <p class="muted">Thoughtful picks for your daily life.</p>
+    </section>
+    <section class="product-grid" id="product-grid" aria-label="Product list"></section>
+
+    <section class="cart-section" id="cart">
+      <div class="section-heading cart-heading">
+        <div>
+          <p class="eyebrow">YOUR SELECTION</p>
+          <h2>Shopping cart <span class="cart-title-count" id="cart-title-count">(0)</span></h2>
+        </div>
+        <button class="text-button" id="clear-cart" type="button">Clear cart</button>
+      </div>
+      <div class="cart-layout">
+        <div class="cart-items" id="cart-items" aria-live="polite">
+          <div class="empty-cart"><span>🛍️</span><h3>Your cart is empty</h3><p>Add a product to see it here.</p></div>
+        </div>
+        <aside class="summary-card">
+          <h3>Order summary</h3>
+          <div class="summary-row"><span>Subtotal</span><strong id="subtotal">₹0</strong></div>
+          <div class="summary-row"><span>Delivery</span><strong id="delivery">₹0</strong></div>
+          <div class="summary-row total-row"><span>Total</span><strong id="total">₹0</strong></div>
+          <p class="delivery-note" id="delivery-note">Delivery is free on orders of ₹2,000 or more.</p>
+          <button class="primary-button checkout-button" id="checkout" type="button">Proceed to checkout</button>
+          <p class="demo-note">Demo checkout only. No payment will be collected.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">S</span> ShopEase</a><p>Mini E-Commerce Project · Built with HTML, CSS and JavaScript</p></footer>
+
+  <dialog id="checkout-dialog" class="checkout-dialog">
+    <button class="dialog-close" id="close-dialog" aria-label="Close" type="button">×</button>
+    <div class="success-icon">✓</div>
+    <p class="eyebrow">DEMO CHECKOUT</p>
+    <h2>Order preview</h2>
+    <p class="muted">Your cart summary is ready. This is a practice checkout and does not process payments.</p>
+    <div id="checkout-details" class="checkout-details"></div>
+    <button class="primary-button" id="finish-demo" type="button">Done</button>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
